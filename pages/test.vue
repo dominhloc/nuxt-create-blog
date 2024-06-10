@@ -3,7 +3,7 @@
     <PageHeader>
       <div class="flex items-center flex-wrap">
         <div
-          class="avatar relative h-[200px] w-[200px] rounded overflow-hidden mr-10 mb-5 sm:mb-0 shadow-xl"
+          class="avatar relative h-[200px] w-[200px] rounded overflow-hidden mr-10 mb-5 sm:mb-0 shadow-xl"  
         >
           <img
             src="~/assets/img/1187753.png"
