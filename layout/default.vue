@@ -1,7 +1,8 @@
 <template>
   <div>
+    <MenuTop />
     <slot />
   </div>
 </template>
-
-<script setup></script>
+<script lang="ts" setup></script>
+<style></style>
