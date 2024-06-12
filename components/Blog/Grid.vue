@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class=" grid shadow-xl group overflow-hidden rounded">
+  <div class="grid shadow-xl group overflow-hidden rounded">
     <div
       v-if="image"
       class="grid__image group h-[300px] w-full relative overflow-hidden"
@@ -15,7 +15,7 @@ const props = defineProps({
       <img
         :src="image"
         :alt="title"
-        class="absolute object-cover w-full h-full group-hover:scale-110 duration-300"
+        class="absolute w-full h-full group-hover:scale-110 duration-300 object-fill"
       />
     </div>
     <div class="p-5 space-y-4">

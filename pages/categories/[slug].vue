@@ -27,8 +27,10 @@ useHead({
     class="font-serif text-blue-900"
   >
   </PageHeader>
-  <section class="blogs blogs-archive">
-    <div class="py-10 px-10">
+  <section
+    class="blogs blogs-archive flex flex-row justify-center items-center"
+  >
+    <div class="py-10 px-10 bg-slate-500 max-w-7xl">
       <div class="grid sm:grid-cols-3 gap-10">
         <BlogGrid
           v-for="post in posts"

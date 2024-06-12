@@ -5,15 +5,15 @@
         <div class="h-[300px] w-screen">
           <img
             src="https://cdn.tgdd.vn/Files/2020/09/20/1291843/chip-concept_800x450.jpg"
-            class="w-full h-full object-cover"
+            class="w-full h-full"
           />
         </div>
       </div>
     </PageHeader>
 
     <!-- Blog Section Starts -->
-    <section class="blogs">
-      <div class="py-10">
+    <section class="blogs flex-col flex justify-center items-center p-10">
+      <div class="max-w-7xl">
         <div class="grid sm:grid-cols-3 gap-10">
           <BlogGrid
             v-for="blog in blogs"
