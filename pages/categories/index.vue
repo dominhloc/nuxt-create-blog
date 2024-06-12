@@ -1,9 +1,4 @@
-<script setup lang="ts">
-// import colorGenerator from "~~/utils/colorGenerator";
-// import { useRoute, useHead } from "vue-router";
-// import { useWpApi } from "~~/composables/wpApi";
-// import PageHeader from "~~/components/PageHeader.vue";
-
+<script lang="ts" setup>
 useHead({
   title: "Categories",
   meta: [
@@ -14,22 +9,20 @@ useHead({
   ],
 });
 
-const { data: categories } = await useWpApi().getCategories();
+const { data: categories } = await useWpApi().getCatgories();
 </script>
-
 <template>
-  <PageHeader title="Categories"></PageHeader>
-  <section class="py-10">
-    <div class="container">
+  <PageHeader title="Categories" class="font-serif text-red-800"> </PageHeader>
+  <section class="py-10 px-20">
+    <div>
       <div class="flex flex-wrap gap-5">
         <NuxtLink
           v-for="category in categories"
-          :key="category.id"
-          :to="`/categories/${category.slug}`"
-          class="flex items-center justify-center py-2 px-4 rounded text-white shadow-md hover:shadow-lg duration-200 text-2xl uppercase"
-          :style="{ backgroundColor: colorGenerator() }"
+          :key="(category as any).id"
+          :to="`/categories/${(category as any).slug}`"
+          class="flex items-center justify-center py-1 px-4 rounded text-white bg-slate-700 shadow-md hover:scale-110 duration-200 text-xl uppercase"
         >
-          <span class="font-semibold">#{{ category.name }}</span>
+          <span class="font-semibold"># {{ (category as any).name }}</span>
         </NuxtLink>
       </div>
     </div>

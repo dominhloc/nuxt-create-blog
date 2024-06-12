@@ -1,7 +1,7 @@
-<script setup>
+<script lang="ts" setup>
 const params = useRoute().params;
 
-const { data: posts } = await useWpApi().getPost(params.slug);
+const { data: posts } = await useWpApi().getPost(params.slug as string);
 const post = posts.value?.[0];
 
 useHead({
@@ -14,31 +14,30 @@ useHead({
   ],
 });
 </script>
-
 <template>
-  <section class="container blog py-10 sm:py-16">
+  <section class="py-10 sm:py-16">
     <div v-if="post" class="sm:px-20">
-      <!-- Tiêu đề blog -->
-      <h1 class="text-3xl sm:text-5xl font-bold text-center leading-snug mb-5">
+      <!-- Blog Title  -->
+      <h1 class="font-bold text-3xl sm:text-5xl text-center leading-snug mb-5">
         {{ post.title.rendered }}
       </h1>
-      <!-- Meta blog -->
+      <!-- Blog Meta  -->
       <div class="flex mb-10 justify-center gap-5">
-        <span>
-          Viết bởi:
-          <span class="text-primary-500">{{
+        <span
+          >Written by:
+          <span class="text-blue-500">{{
             post._embedded["author"][0]?.name
-          }}</span>
-        </span>
+          }}</span></span
+        >
 
-        <span>
-          Đăng vào:
-          <span class="text-primary-500">{{ post.date }}</span>
-        </span>
+        <span
+          >Published on:
+          <span class="text-blue-500">{{ post.date }}</span></span
+        >
       </div>
-      <!-- Hình ảnh blog -->
+      <!-- Blog Image  -->
       <div
-        class="h-[250px] sm:h-[500px] w-full rounded shadow-xl relative overflow-hidden mb-12"
+        class="h-[250px] sm:h-[500px] w-full rounded-lg shadow-xl relative overflow-hidden mb-12"
       >
         <img
           :src="post._embedded['wp:featuredmedia'][0]?.source_url"
@@ -46,7 +45,7 @@ useHead({
           class="absolute w-full h-full object-cover"
         />
       </div>
-      <div class="sm:px-10">
+      <div>
         <div v-if="post.content" v-html="post.content.rendered"></div>
       </div>
     </div>

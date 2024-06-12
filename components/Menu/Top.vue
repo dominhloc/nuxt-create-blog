@@ -1,36 +1,74 @@
 <template>
-  <nav
-    class="bg-gray-900 text-white py-5 border-b border-gray-700 flex justify-end p-1"
-  >
-    <div class="flex-1 rounded-md">
-      <div
-        class="flex hover:bg-slate-600 font-serif hover:scale-110 duration-300 w-fit ml-10 rounded-md p-1 text-xl"
-      >
-        <Avatar
-          src="https://vntime.org/wp-content/uploads/2020/04/100-%E1%BA%A2nh-n%E1%BB%81n-m%C3%A1y-t%C3%ADnh-%C4%91%E1%BA%B9p-nh%E1%BA%A5t-c%C3%B3-link-t%E1%BA%A3i-v%E1%BB%81-tr%E1%BB%B1c-ti%E1%BA%BFp.jpeg"
-        />
-        <NuxtLink
-          to="/"
-          class="text-2xl font-medium ml-4 p-2 rounded-md flex justify-center items-center text-white"
-          >IT Blogggg</NuxtLink
-        >
+  <div class="flex justify-center">
+    <div class="text-black p-4 flex w-5/6 flex-col">
+      <div class="flex space-x-5">
+        <!-- Nút Blog về Trang chủ -->
+        <div class="flex-1 flex items-center">
+          <NuxtLink
+            to="/"
+            class="flex justify-start items-center text-3xl font-serif font-semibold hover:scale-125 duration-300 border p-1 rounded-md"
+          >
+            Blog
+          </NuxtLink>
+        </div>
+        <div class="flex space-x-5 items-center mr-4">
+          <!-- Trang chủ -->
+          <div :class="isActive('/') ? 'text-primary-400' : ''">
+            <button
+              @click.prevent="navigate('/')"
+              class="font-serif font-semibold p-2 hover:scale-150 duration-300 border rounded-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.2em"
+                height="1.2em"
+                viewBox="0 0 24 24"
+                class="text-xl"
+              >
+                <path
+                  fill="black"
+                  d="M6 19h3v-6h6v6h3v-9l-6-4.5L6 10zm-2 2V9l8-6l8 6v12h-7v-6h-2v6zm8-8.75"
+                />
+              </svg>
+            </button>
+          </div>
+          <div :class="isActive('/categories') ? 'text-primary-400' : ''">
+            <button
+              @click.prevent="navigate('/categories')"
+              class="font-serif font-semibold p-2 hover:scale-150 duration-300 border rounded-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.2em"
+                height="1.2em"
+                viewBox="0 0 32 32"
+                class="text-xl"
+              >
+                <path
+                  fill="black"
+                  d="m6.76 6l.45.89L7.76 8H12v5H4V6zm.62-2H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H9l-.72-1.45a1 1 0 0 0-.9-.55m15.38 2l.45.89l.55 1.11H28v5h-8V6zm.62-2H19a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-4l-.72-1.45a1 1 0 0 0-.9-.55M6.76 19l.45.89l.55 1.11H12v5H4v-7zm.62-2H3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1H9l-.72-1.45a1 1 0 0 0-.9-.55m15.38 2l.45.89l.55 1.11H28v5h-8v-7zm.62-2H19a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1h-4l-.72-1.45a1 1 0 0 0-.9-.55"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <ul
-        class="flex gap-5 items-center justify-end text-gray-300 hover:text-gray-50"
-      >
-        <li :class="active === '/' ? 'text-primary-400' : ''">
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li :class="active === '/categories' ? 'text-primary-400' : ''">
-          <NuxtLink to="/categories">Categories</NuxtLink>
-        </li>
-      </ul>
     </div>
-  </nav>
+  </div>
 </template>
-<script lang="ts" setup>
+
+<script setup>
+// import { useRoute, useRouter } from "vue-router";
+// import { computed } from "vue";
+
 const route = useRoute();
-const active = computed(() => {
-  return route.path;
-});
+const router = useRouter();
+
+const isActive = (path) => {
+  return route.path === path;
+};
+
+const navigate = (path) => {
+  router.push(path);
+};
 </script>

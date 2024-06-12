@@ -1,69 +1,35 @@
+<!-- <div class="flex justify-end bg-slate-900 p-1">
+    <div class="flex-1 rounded-md">
+      <div
+        class="flex hover:bg-slate-600 font-serif hover:scale-110 duration-300 w-fit ml-10 rounded-md p-1 text-xl"
+      >
+        <Avatar
+          src="https://vntime.org/wp-content/uploads/2020/04/100-%E1%BA%A2nh-n%E1%BB%81n-m%C3%A1y-t%C3%ADnh-%C4%91%E1%BA%B9p-nh%E1%BA%A5t-c%C3%B3-link-t%E1%BA%A3i-v%E1%BB%81-tr%E1%BB%B1c-ti%E1%BA%BFp.jpeg"
+        />
+        <button class="flex justify-center items-center p-2 text-white">
+          IT Blogggg
+        </button>
+      </div>
+    </div>
+    <button
+      class="p-2 ml-4 rounded-md text-white hover:bg-slate-800 hover:scale-110 duration-300"
+    >
+      Home
+    </button>
+
+    <button
+      class="p-2 mr-10 ml-4 rounded-md text-white hover:bg-slate-800 hover:scale-110 duration-300"
+    >
+      Categories
+    </button>
+  </div>
+  <div class="bg-clip-text">
+    <Image
+      src="https://media.istockphoto.com/id/1289411982/vi/anh/an-ninh-m%E1%BA%A1ng-ph%C3%A1t-tri%E1%BB%83n-web-v%C3%A0-l%C3%A0m-vi%E1%BB%87c-trong-kh%C3%A1i-ni%E1%BB%87m-it.jpg?s=612x612&w=0&k=20&c=6NZTGJASgJN2vdY9sRVsxSg_UuNDo-qQpmen4hhafZ8="
+    />
+  </div> -->
 <template>
-  <main>
-    <PageHeader>
-      <div class="flex items-center flex-wrap">
-        <div
-          class="avatar relative h-[200px] w-[200px] rounded overflow-hidden mr-10 mb-5 sm:mb-0 shadow-xl"  
-        >
-          <img
-            src="~/assets/img/1187753.png"
-            class="absolute w-full h-full object-cover"
-          />
-        </div>
-        <div>
-          <h1 class="text-4xl font-bold">Thành Kun</h1>
-          <p class="mt-3 text-xl mb-5"></p>
-          <a
-            href="https://www.facebook.com/profile.php?id=100023987322376"
-            class="bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded text-white inline-flex items-center gap-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 320 512"
-            >
-              <path
-                fill="currentColor"
-                d="m279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-              />
-            </svg>
-            Let's Connect
-          </a>
-        </div>
-      </div>
-    </PageHeader>
-
-    <!-- Blog Section Starts -->
-    <section class="blogs">
-      <div class="container py-10">
-        <div class="grid sm:grid-cols-3 gap-10">
-          <BlogGrid
-            v-for="blog in blogs"
-            :key="blog.id"
-            :title="blog.title.rendered"
-            :image="blog._embedded['wp:featuredmedia'][0]?.source_url"
-            :excerpt="blog.excerpt.rendered"
-            :slug="blog.slug"
-          ></BlogGrid>
-        </div>
-      </div>
-    </section>
-    <!-- Blog Section Ends  -->
-  </main>
+  <div></div>
 </template>
-<script lang="ts" setup>
-import useWpApi from "~~/composables/useWpApi";
 
-useHead({
-  title: "Home",
-  meta: [
-    {
-      name: "description",
-      content: "Home",
-    },
-  ],
-  titleTemplate: "Thành Kun",
-});
-const { data: blogs, refresh, error } = await useWpApi().getPosts();
-</script>
+<script setup></script>

@@ -1,17 +1,16 @@
-<script lang="ts" setup>
-defineProps<{
-  title: string;
-  excerpt?: string;
-  image?: string;
-  slug?: string;
-}>();
+<script setup>
+const props = defineProps({
+  title: String,
+  image: String,
+  slug: String,
+});
 </script>
 
 <template>
-  <div class="grid shadow-xl group overflow-hidden rounded">
+  <div class=" grid shadow-xl group overflow-hidden rounded">
     <div
       v-if="image"
-      class="grid__image h-[180px] w-full relative overflow-hidden"
+      class="grid__image group h-[300px] w-full relative overflow-hidden"
     >
       <img
         :src="image"
@@ -19,28 +18,24 @@ defineProps<{
         class="absolute object-cover w-full h-full group-hover:scale-110 duration-300"
       />
     </div>
-    <div class="grid__content p-5">
-      <h3 class="grid__content-title text-xl font-semibold mb-2">
+    <div class="p-5 space-y-4">
+      <h3 class="text-xl group-hover:text-blue-600 font-semibold">
         {{ title }}
       </h3>
-      <p
-        v-if="excerpt"
-        class="grid__content-excerpt mb-2 text-sm text-clip overflow-hidden ..."
-      >
-        {{ excerpt }}
-      </p>
+
       <NuxtLink
         v-if="slug"
-        class="blog__readmore border-b-2 border-primary-500 inline-flex items-center"
+        class="border-b-2 border-blue-500 group-hover:font-semibold inline-flex items-center"
         :to="`/${slug}`"
-        >Read more
+      >
+        Read more
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-4 h-4 ml-1 group-hover:ml-2 duration-200"
+          class="w-4 h-4 ml-1 group-hover:ml-4 group-hover:font-semibold duration-200"
         >
           <path
             stroke-linecap="round"

@@ -3,11 +3,11 @@
  * A collection of WordPress composable functions.
  */
 
-import { Post } from "~~/types/post";
+import { Post } from "../types/post";
 
 export default () => {
   const config = useRuntimeConfig();
-  const WP_URL: string = config.public.wpUri;
+  const WP_URL: string = "https://api.jahid.dev";
 
   const get = async <T>(endpoint: string) => {
     return useFetch<T>(`${WP_URL}/wp-json/wp/v2/${endpoint}`);
