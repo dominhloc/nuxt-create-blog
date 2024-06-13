@@ -7,43 +7,43 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="grid shadow-xl group overflow-hidden rounded">
-    <div
-      v-if="image"
-      class="grid__image group h-[300px] w-full relative overflow-hidden"
-    >
-      <img
-        :src="image"
-        :alt="title"
-        class="absolute w-full h-full group-hover:scale-110 duration-300 object-fill"
-      />
-    </div>
-    <div class="p-5 space-y-4">
-      <h3 class="text-xl group-hover:text-blue-600 font-semibold">
-        {{ title }}
-      </h3>
-
-      <NuxtLink
-        v-if="slug"
-        class="border-b-2 border-blue-500 group-hover:font-semibold inline-flex items-center"
-        :to="`/${slug}`"
+  <div class="">
+    <div class="grid shadow-xl group overflow-hidden rounded">
+      <div
+        v-if="image"
+        class="grid__image group h-[150px] w-full relative overflow-hidden"
       >
-        Read more
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-4 h-4 ml-1 group-hover:ml-4 group-hover:font-semibold duration-200"
+        <img
+          :src="image"
+          :alt="title"
+          class="absolute w-full h-full group-hover:scale-125 duration-300 object-cover"
+        />
+      </div>
+      <div class="p-5 space-y-4">
+        <h3 class="text-xl group-hover:text-blue-600 font-semibold">
+          {{ title }}
+        </h3>
+
+        <NuxtLink
+          v-if="slug"
+          class="group-hover:border-b-2 border-blue-500 group-hover:text-blue-600 group-hover:font-semibold inline-flex items-center"
+          :to="`/${slug}`"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-          />
-        </svg>
-      </NuxtLink>
+          Read more
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            class="w- h- ml-1 group-hover:ml-4 group-hover:font-semibold duration-200"
+            height="30"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="black"
+              d="M14 9h7c.55 0 1-.45 1-1s-.45-1-1-1h-7c-.55 0-1 .45-1 1s.45 1 1 1m7 6h-7c-.55 0-1 .45-1 1s.45 1 1 1h7c.55 0 1-.45 1-1s-.45-1-1-1m0-4h-4c-.55 0-1 .45-1 1s.45 1 1 1h4c.55 0 1-.45 1-1s-.45-1-1-1M8.85 7.85a.5.5 0 0 0-.85.36V11H3c-.55 0-1 .45-1 1s.45 1 1 1h5v2.79c0 .45.54.67.85.35l3.79-3.79c.2-.2.2-.51 0-.71z"
+            />
+          </svg>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>

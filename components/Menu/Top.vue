@@ -1,22 +1,28 @@
 <template>
-  <div class="flex justify-center">
-    <div class="text-black p-4 flex w-5/6 flex-col">
+  <div class="flex justify-center max-w-full bg-slate-200">
+    <div class="text-black p-4 flex-1 max-w-7xl">
       <div class="flex space-x-5">
         <!-- Nút Blog về Trang chủ -->
-        <div class="flex-1 flex items-center">
+        <div class="flex-auto flex items-center">
           <NuxtLink
             to="/"
-            class="flex justify-start items-center text-3xl font-serif font-semibold hover:scale-125 duration-300 border p-1 rounded-md"
+            class="flex justify-start border-black items-center text-3xl font-serif font-semibold hover:scale-125 duration-300 border p-1 rounded-md"
           >
             Blog
           </NuxtLink>
         </div>
         <div class="flex space-x-5 items-center mr-4">
           <!-- Trang chủ -->
-          <div :class="isActive('/') ? 'text-primary-400' : ''">
+          <div
+            :class="
+              isActive('/')
+                ? 'bg-slate-400 rounded-md hover:scale-150 duration-300'
+                : 'hover:scale-150 duration-300'
+            "
+          >
             <button
               @click.prevent="navigate('/')"
-              class="font-serif font-semibold p-2 hover:scale-150 duration-300 border rounded-md"
+              class="font-serif font-semibold p-2 border border-black rounded-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,10 +38,16 @@
               </svg>
             </button>
           </div>
-          <div :class="isActive('/categories') ? 'text-primary-400' : ''">
+          <div
+            :class="
+              isActive('/categories')
+                ? 'bg-slate-400 rounded-md hover:scale-150 duration-300'
+                : 'hover:scale-150 duration-300'
+            "
+          >
             <button
               @click.prevent="navigate('/categories')"
-              class="font-serif font-semibold p-2 hover:scale-150 duration-300 border rounded-md"
+              class="font-serif font-semibold p-2 border-black border rounded-md"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

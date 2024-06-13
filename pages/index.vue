@@ -2,7 +2,7 @@
   <main>
     <PageHeader>
       <div class="flex flex-col items-center justify-center">
-        <div class="h-[300px] w-screen">
+        <div class="h-[300px] w-3/6 hover:scale-110 duration-300">
           <img
             src="https://cdn.tgdd.vn/Files/2020/09/20/1291843/chip-concept_800x450.jpg"
             class="w-full h-full"
@@ -12,7 +12,9 @@
     </PageHeader>
 
     <!-- Blog Section Starts -->
-    <section class="blogs flex-col flex justify-center items-center p-10">
+    <section
+      class="blogs flex-col flex justify-center items-center bg-slate-200 p-9"
+    >
       <div class="max-w-7xl">
         <div class="grid sm:grid-cols-3 gap-10">
           <BlogGrid
